@@ -1,0 +1,33 @@
+// body{
+//   background-color: #000;
+
+//   & > ul {
+//     list-style-type: none;
+    
+//     & > li{
+//       color: red;
+//     }
+//   }
+// }
+
+// // body{
+// //   background-color: #000;
+// // }
+
+// // body > ul{
+// //   list-style-type: none;
+// // }
+
+// // body > ul > li{
+// //   color: red;
+// // }
+@import "index.css";
+@use "index.css" as *;
+
+.color-list{
+  @for $i from 1 through 3{
+    li:nth-child(#{$i}){
+      background-color: lighten(#efa34d, $i * 5%);
+    }
+  }
+}
